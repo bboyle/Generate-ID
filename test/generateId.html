@@ -130,6 +130,18 @@
 
 	});
 
+	test( 'formats id suggestions', 2, function() {
+		
+		var label = $( '#qunit-fixture label' ),
+			input = $( '#qunit-fixture input' );
+		
+		strictEqual( label.text(), 'Your name', 'label is "Your name"' );
+
+		input.generateId( label.text() );
+		strictEqual( input.attr( 'id' ), 'your-name', '"Your name" mapped to "your-name"' );
+
+	});
+
 
 // --></script>
 

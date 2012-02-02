@@ -1,6 +1,6 @@
 /**
  * @author		Ben Boyle <benjamins.boyle@gmail.com>
- * @version		0.1
+ * @version		1.0
  * @since		2012-02-02
  */
 (function( $ ) {
@@ -18,7 +18,11 @@
 
 		var i = 1;
 
-		preferredId = preferredId || 'id';
+		if ( ! preferredId ) {
+			preferredId = 'id';
+		} else {
+			preferredId = preferredId.replace( /\s+/, '-' ).toLowerCase();
+		}
 
 		return this.each(function() {
 
