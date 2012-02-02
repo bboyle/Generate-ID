@@ -26,10 +26,11 @@
 
 		return this.each(function() {
 
-			var id = preferredId;
+			var id;
 
 			if ( ! this.getAttribute( 'id' )) {
 
+				id = preferredId;
 				while ( document.getElementById( id )) {
 					id = preferredId + String( i );
 					i++;
