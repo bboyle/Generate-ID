@@ -22,12 +22,19 @@ Returns the `@id` of _foo_. Will be an existing `id` or in the format `id123`.
 
 `$( '#foo' ).generateId()`
 
+`$( '#foo' ).generateId( 'bar' )`
+
 Does nothing. `@id="foo"` will be preserved.
+
+`$( foo ).generateId( 'bar' )`
+
+Will set `@id="bar"` if _foo_ has no `id`.
+If `bar` is already used in the document, it will use `bar1`, `bar2`, `bar3`, …
 
 `$( 'p' ).generateId( 'para' )`
 
 Will set `@id` on all `<p>` elements in the document that don’t already have an id.
-The `id` will be in the format `para123`.
+The `id` values be `para`, `para1`, `para2`.
 
 	var question1 = $( '<label>Your name</label><input />' );
 	question1.find( 'input' ).generateId( question1.find( 'label' ).text() );

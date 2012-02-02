@@ -10,18 +10,27 @@
 	/**
 	 * Assigns a unique value to `@id` unless hasAttribute( 'id' ) is true
 	 *
+	 * @param preferredId	string to use for id value
+	 * 
 	 * @return jquery object (chaining supported)
 	 */
-	$.fn.generateId = function() {
+	$.fn.generateId = function( preferredId ) {
 
-		var id = 'id',
-			i = 0;
+		var i = 1;
 
+		preferredId = preferredId || 'id';
 
 		return this.each(function() {
+
+			var id = preferredId;
+
 			if ( ! this.getAttribute( 'id' )) {
-				i++;
-				this.setAttribute( 'id', id + i );
+
+				while ( document.getElementById( id )) {
+					id = preferredId + String( i );
+					i++;
+				}
+				this.setAttribute( 'id', id );
 			}
 		});
 
