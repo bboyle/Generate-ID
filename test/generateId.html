@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+	<meta charset="UTF-8" />
+	<title>generateId() tests</title>
+
+	<style>
+		body {
+			padding: 2em;
+			font-family: sans-serif;
+			background: #faf7f3;
+			color: #111;
+		}
+
+	</style>
+	<link rel="stylesheet" href="../lib/qunit-git.css" />
+	<script src="../lib/qunit-git.js"></script>
+
+</head>
+
+<body>
+
+
+<div id="qunit">
+	<h1 id="qunit-header">QUnit</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+	<div id="qunit-fixture">
+
+		<h1 id="foo">Foo</h1>
+
+		<p>Paragraph 1</p>
+		<p>Paragraph 2</p>
+		<p>Paragraph 3</p>
+
+		<h2 id="bar">Bar</h2>
+
+		<div>
+			<label>Your name</label>
+			<input />
+		</div>
+
+	</div>
+</div>
+
+
+<script src="../lib/jquery-1.4.4-min.js"></script>
+<script src="../src/generateId.js"></script>
+
+<script><!-- //
+
+
+	module( 'environment' );
+
+	test( 'test fields are in fixture', 6, function() {
+
+		strictEqual( $( '#foo' ).length, 1, '#foo exists' );
+		strictEqual( $( '#bar' ).length, 1, '#bar exists' );
+		strictEqual( $( '#qunit-fixture *' ).filter(function() {
+			return !! this.getAttribute( 'id' );
+		}).length, 2, 'only 2 elements with @id set' );
+		strictEqual( $( '#qunit-fixture p' ).length, 3, '3 paragraphs' );
+		strictEqual( $( '#qunit-fixture label' ).length, 1, '1 label' );
+		strictEqual( $( '#qunit-fixture input' ).length, 1, '1 input' );
+
+	});
+
+
+	module( 'chaining' );
+
+	test( 'generateId', 4, function() {
+
+		var foo = $( '#foo' ),
+			bar = $( '#bar' ),
+			fubar = $( '#foo, #bar' );
+
+		strictEqual( fubar.generateId()[ 0 ], foo[ 0 ], 'object.generateId()[ 0 ] is ok' );
+		strictEqual( fubar.generateId()[ 1 ], bar[ 0 ], 'object.generateId()[ 1 ] is ok' );
+
+		fubar.generateId().attr( 'title', 'foo' );
+		strictEqual( foo.attr( 'title' ), 'foo', '#foo was chained' );
+		strictEqual( bar.attr( 'title' ), 'foo', '#bar was chained' );
+
+	});
+
+
+	module( 'acceptance' );
+
+	test( 'preserves id', 2, function() {
+		
+		$( '#foo, #bar' ).generateId();
+		strictEqual( $( '#foo' ).attr( 'id' ), 'foo', '#foo was preserved' );
+		strictEqual( $( '#bar' ).attr( 'id' ), 'bar', '#bar was preserved' );
+
+	});
+
+	test( 'assigns id', 2, function() {
+		
+		var foo = $( '#qunit-fixture p' ).eq( 0 );
+		ok( ! foo.attr( 'id' ), 'no @id for foo' );
+
+		foo.generateId();
+		ok( !! foo.attr( 'id' ), 'foo has an @id' );
+
+	});
+
+// --></script>
+
+
+</body>
+</html>
