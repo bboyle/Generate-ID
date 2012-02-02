@@ -38,7 +38,7 @@
 		<h2 id="bar">Bar</h2>
 
 		<div>
-			<label>Your name</label>
+			<label>Your preferred name</label>
 			<input />
 		</div>
 
@@ -135,10 +135,10 @@
 		var label = $( '#qunit-fixture label' ),
 			input = $( '#qunit-fixture input' );
 		
-		strictEqual( label.text(), 'Your name', 'label is "Your name"' );
+		strictEqual( label.text(), 'Your preferred name', 'label is "Your preferred name"' );
 
 		input.generateId( label.text() );
-		strictEqual( input.attr( 'id' ), 'your-name', '"Your name" mapped to "your-name"' );
+		strictEqual( input.attr( 'id' ), 'your-preferred-name', '"Your preferred name" mapped to "your-preferred-name"' );
 
 	});
 

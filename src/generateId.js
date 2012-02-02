@@ -21,7 +21,7 @@
 		if ( ! preferredId ) {
 			preferredId = 'id';
 		} else {
-			preferredId = preferredId.replace( /\s+/, '-' ).toLowerCase();
+			preferredId = preferredId.replace( /\s+/g, '-' ).toLowerCase();
 		}
 
 		return this.each(function() {
