@@ -115,14 +115,18 @@
 
 	});
 
-	test( 'uses suggested id multiple times', 3, function() {
+	test( 'uses suggested id multiple times', 4, function() {
 		
-		var p = $( '#qunit-fixture p' );
+		var p = $( '#qunit-fixture p' ),
+			label = $( '#qunit-fixture label' );
 
 		p.generateId( 'para' );
 		strictEqual( p.attr( 'id' ), 'para', 'suggested id para was used' );
 		strictEqual( p[ 1 ].id, 'para1', 'suggested id para1 was used' );
 		strictEqual( p[ 2 ].id, 'para2', 'suggested id para2 was used' );
+
+		label.generateId( 'para' );
+		strictEqual( label.attr( 'id' ), 'para3', 'suggested id para3 was used' );
 
 	});
 
