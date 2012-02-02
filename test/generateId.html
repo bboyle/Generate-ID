@@ -111,10 +111,21 @@
 		var foo = $( '#qunit-fixture p' ).eq( 0 );
 
 		foo.generateId( 'idfoo' );
-
 		strictEqual( foo.attr( 'id' ), 'idfoo', 'suggested id was used' );
 
 	});
+
+	test( 'uses suggested id multiple times', 3, function() {
+		
+		var p = $( '#qunit-fixture p' );
+
+		p.generateId( 'para' );
+		strictEqual( p.attr( 'id' ), 'para', 'suggested id para was used' );
+		strictEqual( p[ 1 ].id, 'para1', 'suggested id para1 was used' );
+		strictEqual( p[ 2 ].id, 'para2', 'suggested id para2 was used' );
+
+	});
+
 
 // --></script>
 
