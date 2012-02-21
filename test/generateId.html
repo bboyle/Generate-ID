@@ -142,6 +142,30 @@
 
 	});
 
+	test( 'handles punctuation', 6, function() {
+		
+		var p = $( '#qunit-fixture p' ).eq( 0 );
+
+		p.generateId( 'This is a test:' );
+		strictEqual( p[ 0 ].id, 'this-is-a-test', 'handles colon' );
+
+		p.removeAttr( 'id' ).generateId( 'This is a really long string, (with brackets)?' );
+		strictEqual( p[ 0 ].id, 'this-is-a-really-long-string-with-brackets', 'handles , (, ) and ?' );
+
+		p.removeAttr( 'id' ).generateId( ' Whitespace trimmed ' );
+		strictEqual( p[ 0 ].id, 'whitespace-trimmed', 'suggested id para2 was used', 'handles leading and trailing whitespace and ?' );
+
+		p.removeAttr( 'id' ).generateId( '<p class="foo">Markup <em>test</em></p>' );
+		strictEqual( p[ 0 ].id, 'p-class-foo-markup-em-test-em-p', 'suggested id para2 was used', 'handles markup' );
+
+		p.removeAttr( 'id' ).generateId( 'id-with-dashes - test' );
+		strictEqual( p[ 0 ].id, 'id-with-dashes-test', 'suggested id para2 was used', 'handles dashes' );
+
+		p.removeAttr( 'id' ).generateId( '_id_abc_123' );
+		strictEqual( p[ 0 ].id, '_id_abc_123', 'suggested id para2 was used', 'handles underscores and numbers' );
+
+	});
+
 
 // --></script>
 
