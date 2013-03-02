@@ -1,20 +1,26 @@
-Generate ID
-===========
+# Generate ID
 
-Small bit of jquery code to set `@id` on elements.
+Generate unique ID attributes on DOM elements.
 
-Inspired by `generate-id()` from [XSLT][xslt-id-func]
+## Getting Started
+Download the [production version][min] or the [development version][max].
 
-Existing `@id` values will not be overwritten.
-New `@id` values will be unique in the document.
-You can supply a string, which will be used if it is unique.
-The string will be set to lowercase, with whitespace replaced by a single hyphen.
-This script **will not check** that the string supplied is a valid `@id` value (e.g. starts with a letter)
+[min]: https://raw.github.com/bboyle/Generate-ID/master/dist/generate-id.min.js
+[max]: https://raw.github.com/bboyle/Generate-ID/master/dist/generate-id.js
 
-[xslt-id-func]: http://www.w3.org/TR/xslt20/#generate-id "generate-id() in XSLT"
+In your web page:
 
-Usage
------
+```html
+<script src="jquery.js"></script>
+<script src="dist/generate-id.min.js"></script>
+<script>
+jQuery(function( $ ) {
+	$( selector ).generateId(); // generates unique ID values for all matched elements
+});
+</script>
+```
+
+## Examples
 
 `$( foo ).generateId().attr( 'id' )`
 
@@ -43,3 +49,17 @@ The `id` values be `para`, `para1`, `para2`.
 Will result in:
 
 	<label for="your-name">Your name</label><input id="your-name" />
+
+## Background
+
+Small bit of jquery code to set `@id` on elements.
+
+Inspired by `generate-id()` from [XSLT][xslt-id-func]
+
+Existing `@id` values will not be overwritten.
+New `@id` values will be unique in the document.
+You can supply a string, which will be used if it is unique.
+The string will be set to lowercase, with whitespace replaced by a single hyphen.
+This script **will not check** that the string supplied is a valid `@id` value (e.g. starts with a letter)
+
+[xslt-id-func]: http://www.w3.org/TR/xslt20/#generate-id "generate-id() in XSLT"

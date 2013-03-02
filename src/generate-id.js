@@ -1,8 +1,11 @@
-/**
- * @author		Ben Boyle <benjamins.boyle@gmail.com>
- * @version		1.0
- * @since		2012-02-02
+/*
+ * generate-id
+ * http://bboyle.github.com/Generate-ID
+ *
+ * Copyright (c) 2013 Ben Boyle
+ * Licensed under the MIT license.
  */
+
 (function( $ ) {
 	'use strict';
 
@@ -10,7 +13,7 @@
 	/**
 	 * Assigns a unique value to `@id` unless hasAttribute( 'id' ) is true
 	 *
-	 * @param preferredId	string to use for id value
+	 * @param preferredId string to use for id value
 	 * 
 	 * @return jquery object (chaining supported)
 	 */
