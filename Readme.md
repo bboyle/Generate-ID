@@ -14,8 +14,8 @@ In your web page:
 <script src="jquery.js"></script>
 <script src="dist/generate-id.min.js"></script>
 <script>
-jQuery(function($) {
-  $.awesome(); // "awesome"
+jQuery(function( $ ) {
+	$( selector ).generateId(); // generates unique ID values for all matched elements
 });
 </script>
 ```
