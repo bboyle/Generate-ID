@@ -1,56 +1,7 @@
-<!DOCTYPE html>
-<html lang="en-AU">
-<head>
-	<meta charset="UTF-8" />
-	<title>generateId() tests</title>
-
-	<style>
-		body {
-			padding: 2em;
-			font-family: sans-serif;
-			background: #faf7f3;
-			color: #111;
-		}
-
-	</style>
-	<link rel="stylesheet" href="../lib/qunit-git.css" />
-	<script src="../lib/qunit-git.js"></script>
-
-</head>
-
-<body>
-
-
-<div id="qunit">
-	<h1 id="qunit-header">QUnit</h1>
-	<h2 id="qunit-banner"></h2>
-	<div id="qunit-testrunner-toolbar"></div>
-	<h2 id="qunit-userAgent"></h2>
-	<ol id="qunit-tests"></ol>
-	<div id="qunit-fixture">
-
-		<h1 id="foo">Foo</h1>
-
-		<p>Paragraph 1</p>
-		<p>Paragraph 2</p>
-		<p>Paragraph 3</p>
-
-		<h2 id="bar">Bar</h2>
-
-		<div>
-			<label>Your preferred name</label>
-			<input />
-		</div>
-
-	</div>
-</div>
-
-
-<script src="../lib/jquery-1.4.4-min.js"></script>
-<script src="../src/generateId.js"></script>
-
-<script><!-- //
-
+/*global QUnit:false, module:false, test:false, asyncTest:false, expect:false*/
+/*global start:false, stop:false ok:false, equal:false, notEqual:false, deepEqual:false*/
+/*global notDeepEqual:false, strictEqual:false, notStrictEqual:false, raises:false*/
+(function( $ ) {
 
 	module( 'environment' );
 
@@ -166,9 +117,4 @@
 
 	});
 
-
-// --></script>
-
-
-</body>
-</html>
+}( jQuery ));
