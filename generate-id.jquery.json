@@ -3,7 +3,7 @@
   "title": "Generate ID",
   "description": "Generate unique ID attributes on DOM elements.",
   "version": "0.1.0",
-  "homepage": "http://bboyle.github.com/Generate-ID",
+  "homepage": "https://github.com/bboyle/Generate-ID",
   "author": {
     "name": "Ben Boyle",
     "email": "benjamins.boyle@gmail.com",
@@ -13,13 +13,11 @@
     "type": "git",
     "url": "https://github.com/bboyle/Generate-ID.git"
   },
-  "bugs": {
-    "url": "https://github.com/bboyle/Generate-ID/issues"
-  },
+  "bugs": "https://github.com/bboyle/Generate-ID/issues",
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://bboyle.github.com/Generate-ID/blob/master/LICENSE-MIT"
+      "url": "https://github.com/bboyle/Generate-ID/blob/master/LICENSE-MIT"
     }
   ],
   "dependencies": {
