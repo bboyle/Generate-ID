@@ -24,8 +24,28 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.min.js'
       },
     },
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: '.'
+        }
+      }
+    },
     qunit: {
-      files: ['test/**/*.html']
+      unit: ['test/**/*.html'],
+      // test other jquery versions
+      jquery: {
+        options: {
+          urls: [
+            'http://localhost:8000/test/generate-id.html?jquery=1.4.4',
+            'http://localhost:8000/test/generate-id.html?jquery=1.7.2',
+            'http://localhost:8000/test/generate-id.html?jquery=1.9.1',
+            'http://localhost:8000/test/generate-id.html?jquery=1.11.0',
+            'http://localhost:8000/test/generate-id.html?jquery=2.1.0'
+          ]
+        }
+      }
     },
     jshint: {
       gruntfile: {
@@ -54,11 +74,11 @@ module.exports = function(grunt) {
       },
       src: {
         files: '<%= jshint.src.src %>',
-        tasks: ['jshint:src', 'qunit']
+        tasks: ['jshint:src', 'qunit:unit']
       },
       test: {
         files: '<%= jshint.test.src %>',
-        tasks: ['jshint:test', 'qunit']
+        tasks: ['jshint:test', 'qunit:unit']
       },
     },
   });
@@ -66,11 +86,13 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'uglify']);
+  grunt.registerTask('test', ['jshint', 'connect', 'qunit']);
+  grunt.registerTask('default', ['test', 'clean', 'uglify']);
 
 };
