@@ -1,3 +1,5 @@
+[![devDependencies](https://david-dm.org/bboyle/Generate-ID/dev-status.png)](https://david-dm.org/bboyle/Generate-ID#info=devDependencies)
+
 # Generate ID
 
 Generate unique ID attributes on DOM elements.
