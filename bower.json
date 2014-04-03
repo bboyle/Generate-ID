@@ -1,6 +1,6 @@
 {
   "name": "generate-id",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/bboyle/Generate-ID",
   "authors": [
     "Ben Boyle <benjamins.boyle@gmail.com>"
@@ -21,7 +21,7 @@
     "**/.*",
     "CONTRIBUTING.md",
     "*.json",
-    "Gruntfile.json",
+    "Gruntfile.js",
     "bower_components",
     "libs",
     "node_modules",

@@ -2,7 +2,7 @@
   "name": "generate-id",
   "title": "Generate ID",
   "description": "Generate unique ID attributes on DOM elements.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/bboyle/Generate-ID",
   "author": {
     "name": "Ben Boyle",
