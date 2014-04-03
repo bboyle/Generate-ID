@@ -10,7 +10,7 @@
     "setAttribute",
     "attr"
   ],
-  "version": "0.1.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/bboyle/Generate-ID",
   "author": {
     "name": "Ben Boyle",
@@ -36,9 +36,10 @@
     "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-uglify": "~0.4.0",
     "grunt": "~0.4.4",
-    "grunt-contrib-jshint": "~0.9.2",
+    "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-qunit": "~0.4.0",
     "qunitjs": "~1.14.0",
-    "grunt-contrib-connect": "~0.7.1"
+    "grunt-contrib-connect": "~0.7.1",
+    "grunt-contrib-concat": "~0.4.0"
   }
 }
