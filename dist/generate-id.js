@@ -1,4 +1,4 @@
-/*! Generate ID - v0.1.1 - 2014-04-03
+/*! Generate ID - v1.0.0 - 2014-04-03
 * https://github.com/bboyle/Generate-ID
 * Copyright (c) 2014 Ben Boyle; Licensed MIT */
 (function( $ ) {

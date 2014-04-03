@@ -1,6 +1,6 @@
 {
   "name": "generate-id",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/bboyle/Generate-ID",
   "authors": [
     "Ben Boyle <benjamins.boyle@gmail.com>"
@@ -19,12 +19,16 @@
   "private": true,
   "ignore": [
     "**/.*",
+    "CONTRIBUTING.md",
+    "*.json",
+    "Gruntfile.json",
+    "bower_components",
     "libs",
     "node_modules",
-    "bower_components",
+    "src",
     "test"
   ],
   "dependencies": {
-    "jquery": "1.7.2"
+    "jquery": "*"
   }
 }
