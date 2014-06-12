@@ -1,5 +1,5 @@
-[![Travis build status](https://travis-ci.org/bboyle/Generate-ID.png?branch=master)](https://travis-ci.org/bboyle/Generate-ID)
-[![devDependencies](https://david-dm.org/bboyle/Generate-ID/dev-status.png)](https://david-dm.org/bboyle/Generate-ID#info=devDependencies)
+[![Travis build status](https://travis-ci.org/bboyle/Generate-ID.svg?branch=master)](https://travis-ci.org/bboyle/Generate-ID)
+[![devDependency Status](https://david-dm.org/bboyle/Generate-ID/dev-status.svg)](https://david-dm.org/bboyle/Generate-ID#info=devDependencies)
 
 # Generate ID
 
