@@ -14,7 +14,7 @@ Download the [production version][min] or the [development version][max].
 
 ### Install using bower
 
-`bower install jquery.generateId`
+`bower install jquery.generate-id`
 
 ## Usage
 
