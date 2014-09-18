@@ -16,7 +16,6 @@
     "attr"
   ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "CONTRIBUTING.md",
