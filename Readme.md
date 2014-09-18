@@ -6,63 +6,85 @@
 Generate unique ID attributes on DOM elements.
 
 ## Getting Started
+
 Download the [production version][min] or the [development version][max].
 
 [min]: https://raw.github.com/bboyle/Generate-ID/master/dist/generate-id.min.js
 [max]: https://raw.github.com/bboyle/Generate-ID/master/dist/generate-id.js
 
-In your web page:
+### Install using bower
+
+`bower install jquery.generateId`
+
+## Usage
+
+- this method is *chainable*
+- existing `id` attributes **will not** be overwritten
+- use `.attr( 'id' )` if you need to get the generate ID value
+
+### .generateId()
+
+Given:
 
 ```html
-<script src="jquery.js"></script>
-<script src="dist/generate-id.min.js"></script>
-<script>
-jQuery(function( $ ) {
-	$( selector ).generateId(); // generates unique ID values for all matched elements
-});
-</script>
+<p>First paragraph</p>
+<p id="second">Second paragraph</p>
+<p>Third paragraph</p>
 ```
 
-## Examples
+When:
 
-`$( foo ).generateId().attr( 'id' )`
+```javascript
+$( 'p' ).generateId();
+```
 
-Returns the `@id` of _foo_. Will be an existing `id` or in the format `id123`.
+Then:
 
-`$( '#foo' ).generateId()`
+```html
+<p id="id">First paragraph</p>
+<p id="second">Second paragraph</p>
+<p id="id1">Third paragraph</p>
+```
 
-`$( '#foo' ).generateId( 'bar' )`
+### .generateId( _preferredId_ )
 
-Does nothing. `@id="foo"` will be preserved.
+Attempts to use the suggested _preferredId_ as the new id value.
 
-`$( foo ).generateId( 'bar' )`
+_preferredId_ will:
 
-Will set `@id="bar"` if _foo_ has no `id`.
-If `bar` is already used in the document, it will use `bar1`, `bar2`, `bar3`, …
+- be converted to lowercase
+- letters, digits, underscores and hyphens are allowed
+- whitespace, punctuation and special characters are replaced by a `-` hyphen
+- **not** be exhaustively checked for validity (e.g. it should start with a letter)
+- have an integer appended to the end (if _preferredId_ is already used in the DOM)
 
-`$( 'p' ).generateId( 'para' )`
+Given:
 
-Will set `@id` on all `<p>` elements in the document that don’t already have an id.
-The `id` values be `para`, `para1`, `para2`.
+```html
+<p>First paragraph</p>
+<p id="second">Second paragraph</p>
+<p>Third paragraph</p>
+```
 
-	var question1 = $( '<label>Your name</label><input />' );
-	question1.find( 'input' ).generateId( question1.find( 'label' ).text() );
-	question1.find( 'label' ).attr( 'for', question1.find( 'input' ).attr( 'id' ));
+When:
 
-Will result in:
+```javascript
+$( 'p' ).generateId( 'para' );
+```
 
-	<label for="your-name">Your name</label><input id="your-name" />
+Then:
+
+```html
+<p id="para">First paragraph</p>
+<p id="second">Second paragraph</p>
+<p id="para1">Third paragraph</p>
+```
+
 
 ## Background
 
 Small bit of jquery code to set `@id` on elements.
 
-Inspired by `generate-id()` from [XSLT][xslt-id-func]
-
-Existing `@id` values will not be overwritten.
-New `@id` values will be unique in the document.
-You can supply a string, which will be used if it is unique.
-The string will be set to lowercase, with whitespace replaced by a single hyphen.
-This script **will not check** that the string supplied is a valid `@id` value (e.g. starts with a letter)
+Inspired by `generate-id()` from [XSLT][xslt-id-func].
 
 [xslt-id-func]: http://www.w3.org/TR/xslt20/#generate-id "generate-id() in XSLT"
