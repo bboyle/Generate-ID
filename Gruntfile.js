@@ -51,8 +51,8 @@ module.exports = function(grunt) {
             'http://localhost:8000/test/generate-id.html?jquery=1.4.4',
             'http://localhost:8000/test/generate-id.html?jquery=1.7.2',
             'http://localhost:8000/test/generate-id.html?jquery=1.9.1',
-            'http://localhost:8000/test/generate-id.html?jquery=1.11.0',
-            'http://localhost:8000/test/generate-id.html?jquery=2.1.0'
+            'http://localhost:8000/test/generate-id.html?jquery=1.11.1',
+            'http://localhost:8000/test/generate-id.html?jquery=2.1.1'
           ]
         }
       }
